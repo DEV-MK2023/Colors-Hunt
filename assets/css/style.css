@@ -1,0 +1,492 @@
+/*
+ * Base Styles
+ * These are global styles that apply to the entire document.
+ */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 1.5rem;
+    position: relative;
+    background: #eef1f5;
+    font-family: 'Inter', sans-serif;
+    color: #34495e;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+button {
+    border: none;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+textarea {
+    border: none;
+    outline: none;
+}
+
+/*
+ * Keyframe Animations
+ * These define the custom animations used throughout the styles.
+ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseShadow {
+    0% {
+        box-shadow: 0 0 6px rgba(0, 109, 119, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(0, 109, 119, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 6px rgba(0, 109, 119, 0.3);
+    }
+}
+
+/*
+ * Header and Navigation
+ * Styles for the main header and search bar.
+ */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+header > nav {
+    position: sticky;
+    top: 1.5rem;
+    width: 90%;
+    max-width: 1366px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+p {
+    width: 24rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    color: #2c3e50;
+}
+
+.logo {
+    width: 13rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.heading-hover {
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.heading-hover:hover {
+    color: #006d77;
+    text-shadow: 0 0 4px rgba(0, 109, 119, 0.4);
+}
+
+/*
+ * Main Content and Layout
+ * Using Flexbox and Grid for a responsive main layout.
+ */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+main > .container {
+    width: 90%;
+    max-width: 1366px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.colors {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.sidebar {
+    width: 280px;
+    min-height: 100vh;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-right: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.sidebar h3 {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.sort,
+.sort-by-color {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sidebarBtn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sidebarBtn:hover {
+    background-color: #f1f5f9;
+    transform: translateX(5px);
+}
+
+.sidebarBtn > img {
+    width: 1.2rem;
+    height: 1.2rem;
+    object-fit: contain;
+}
+
+.sidebarBtn > span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #495057;
+    text-transform: capitalize;
+    transition: color 0.2s ease;
+}
+
+.sidebarBtn:hover > span {
+    color: #006d77;
+}
+
+.sidebar hr {
+    border: 0;
+    height: 1px;
+    background-color: #e9ecef;
+    margin: 1rem 0;
+}
+
+.sidebar-btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    color: #495057;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-btn:hover {
+    background-color: #f1f5f9;
+    color: #006d77;
+}
+
+hr {
+    border: 1px solid #eee;
+    margin: 1rem 0rem;
+}
+
+/*
+ * Color Cards and Details
+ * Enhanced styles for the color palette cards.
+ */
+
+ .colors{
+  /* background-color: #2c3e50; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+ }
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.02);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.card > .card-colors {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.card > .card-colors > .color {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.card > .card-colors > .color:hover {
+    transform: scale(1.02);
+}
+
+.card > .card-colors > .color:nth-child(1) { height: 5rem; }
+.card > .card-colors > .color:nth-child(2) { height: 4rem; }
+.card > .card-colors > .color:nth-child(3) { height: 3rem; }
+.card > .card-colors > .color:nth-child(4) { height: 2.5rem; }
+
+.card > .card-colors > .color:hover > .color-code {
+    opacity: 1;
+}
+
+.card > .card-colors > .color > .color-code {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 0;
+    padding: 0.3rem 0.6rem;
+    border-top-right-radius: 0.5rem;
+    opacity: 0;
+    transition: 0.3s ease;
+    pointer-events: none;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.card > .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 1rem;
+}
+
+.card > .card-footer > .time {
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+.primary-btn {
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background: #ffffff;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.primary-btn:hover {
+    background: #006d77;
+    color: #ffffff;
+    border-color: #006d77;
+    box-shadow: 0 4px 8px rgba(0, 109, 119, 0.2);
+}
+
+.primary-button {
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 50rem;
+    cursor: pointer;
+    background-color: #f1f3f6;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.primary-button:hover {
+    background: #006d77;
+    color: #ffffff;
+    border-color: #006d77;
+    box-shadow: 0 4px 8px rgba(0, 109, 119, 0.2);
+}
+
+.primary-button > .color {
+    width: 1rem;
+    border-radius: 50%;
+    background: red;
+    height: 1rem;
+    scale: 1;
+}
+
+.card > .card-footer > .btns {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.primary-btn > img {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+}
+
+.primary-btn > span {
+    text-transform: capitalize;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    width: 1150px;
+}
+
+.searchBox {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 50rem;
+    background: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease-in-out;
+}
+
+.searchBox::placeholder {
+    color: #999;
+}
+
+.searchBox:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: #006d77;
+    box-shadow: 0 0 6px rgba(0, 109, 119, 0.3);
+    animation: pulseShadow 1.5s infinite;
+}
+
+.search-color {
+    width: 100%;
+    height: 320px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #f1f5f9;
+    margin-top: 1rem;
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.search-color > h3 {
+    color: #333;
+    font-weight: 500;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.show {
+    display: inline-block;
+}
+
+#color-tags {
+    width: 90%;
+    height: 90px;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 5px;
+}
+
+.hr1 {
+    background-color: #d1d5db;
+    height: 4px;
+    width: 73%;
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.color-detail {
+    width: 100%;
+    height: 80vh;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.details {
+    width: 40%;
+}
+
+.color-detail > .details > .tags {
+    display: flex;
+    transition: 0.3s;
+}
+
+.color-detail > .details > .tags > .primary-btn {
+    scale: 0.8;
+    transition: 0.3s;
+}
+
+.color-detail > .details > .tags > .primary-btn > .color {
+    scale: 0;
+    transition: 0.3s;
+}
+
+.color-detail > .details > .tags > .primary-btn:hover > .color {
+    width: 1rem;
+    border-radius: 50%;
+    background: red;
+    height: 1rem;
+    scale: 1;
+}
+
+.color-detail > .details > .tags > .primary-btn > .color-name {
+    text-transform: capitalize;
+}

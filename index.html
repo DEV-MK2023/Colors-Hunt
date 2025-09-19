@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>COLORS HUNT CLONE</title>
+  <!-- FlatIcon CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Header Section Start  -->
+  <header>
+    <nav>
+      <a href="./" class="logo">
+        <img src="./assets/img/logo.jpg" alt="COLORS HUNT CLONE LOGO" />
+        <p>Color Hunt</p>
+      </a>
+      <div class="input-box">
+        <input type="text" name="text" id="searchBox" class="searchBox" placeholder="Type here..." />
+        <div id="searchColor" class="search-color">
+          <h3 class="heading-hover" style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 500; text-shadow: 1px 1px 2px rgba(0,0,0,0.05); letter-spacing: 0.5px;">Colors</h3>
+          <!-- Color Tags  -->
+          <div id="color-tags">
+            <!-- Getting from JS  -->
+          </div>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Header Section End -->
+  <!-- Main Section Start -->
+  <main>
+    <div class="container">
+      <!-- Sidebar Start-->
+      <aside class="sidebar">
+        <div class="sort">
+          <button class="sidebarBtn" id="newBtn">
+            <img src="./assets/icons/new.svg" alt="" /> <span>New</span>
+          </button>
+          <button class="sidebarBtn" id="popularBtn">
+            <img src="./assets/icons/popular.svg" alt="" />
+            <span>Popular</span>
+          </button>
+          <button class="sidebarBtn" class="randomBtn" id="randomBtn">
+            <img src="./assets/icons/random.svg" alt="" /> <span>Random</span>
+          </button>
+        </div>
+        <hr />
+        <div class="sort-by-color" id="sort-by-color">
+          <!-- Getting From JS -->
+        </div>
+      </aside>
+      <!-- Sidebar End-->
+
+      <!-- Color Section Start -->
+      <section class="colors" id="platter">
+        <!-- Getting From JS -->
+      </section>
+      <!-- Color Section End -->
+    </div>
+  </main>
+  <!-- Main Section End -->
+
+  <script src="./assets/js/script.js" type="module"></script>
+</body>
+
+</html>
